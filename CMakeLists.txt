@@ -18,7 +18,6 @@ target_link_libraries(bulk_server
         )
 
 set_target_properties(bulk_server async bulk  PROPERTIES
-        fPIC
         CXX_STANDARD 14
         CXX_STANDARD_REQUIRED ON
         # COMPILE_DEFINITIONS BOOST_ASIO_ENABLE_HANDLER_TRACKING
