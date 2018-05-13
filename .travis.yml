@@ -4,7 +4,7 @@ addons:
    sources: [ 'ubuntu-toolchain-r-test' ]
    packages:
            - libstdc++-6-dev
-compiler: g++
+compiler: clang
 before_script:
   - sudo apt-get install libboost-dev  -y
   - echo "deb http://archive.ubuntu.com/ubuntu xenial main universe" | sudo tee -a /etc/apt/sources.list
