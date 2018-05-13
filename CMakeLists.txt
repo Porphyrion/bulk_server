@@ -6,6 +6,7 @@ find_package(Boost COMPONENTS system REQUIRED)
 
 add_library(bulk commandblock.cpp observers.cpp interpreter.cpp bulkhandler.cpp)
 add_library(async SHARED async.cpp async.h)
+set_property(TARGET async PROPERTY POSITION_INDEPENDENT_CODE ON)
 
 target_link_libraries(async bulk)
 
@@ -17,6 +18,7 @@ target_link_libraries(bulk_server
         )
 
 set_target_properties(bulk_server async bulk  PROPERTIES
+        fPIC
         CXX_STANDARD 14
         CXX_STANDARD_REQUIRED ON
         # COMPILE_DEFINITIONS BOOST_ASIO_ENABLE_HANDLER_TRACKING
