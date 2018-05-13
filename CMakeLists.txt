@@ -16,7 +16,7 @@ target_link_libraries(bulk_server
         ${Boost_LIBRARIES}
         )
 
-set_target_properties(async_ser async bulk  PROPERTIES
+set_target_properties(bulk_server async bulk  PROPERTIES
         CXX_STANDARD 14
         CXX_STANDARD_REQUIRED ON
         # COMPILE_DEFINITIONS BOOST_ASIO_ENABLE_HANDLER_TRACKING
