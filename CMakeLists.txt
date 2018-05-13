@@ -6,7 +6,7 @@ find_package(Boost COMPONENTS system REQUIRED)
 
 add_library(bulk commandblock.cpp observers.cpp interpreter.cpp bulkhandler.cpp)
 add_library(async SHARED async.cpp async.h)
-set_property(TARGET async PROPERTY POSITION_INDEPENDENT_CODE ON)
+set_property(TARGET bulk PROPERTY POSITION_INDEPENDENT_CODE ON)
 
 target_link_libraries(async bulk)
 
