@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.6)
 
-project(Bulk_server)
+project(Bulk_server VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
 
-find_package(Boost COMPONENTS system REQUIRED)
+find_package(Boost) # COMPONENTS) # system REQUIRED)
 
 add_library(bulk commandblock.cpp observers.cpp interpreter.cpp bulkhandler.cpp)
 add_library(async SHARED async.cpp async.h)
@@ -11,7 +11,7 @@ target_link_libraries(async bulk)
 
 add_executable(bulk_server main.cpp)
 
-target_link_libraries(async_ser
+target_link_libraries(bulk_server
         async
         ${Boost_LIBRARIES}
         )
