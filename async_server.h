@@ -9,7 +9,6 @@ using namespace async;
 
 class bulk_session;
 
-
 class bulk_room
 {
     using bulk_session_ptr = std::shared_ptr<bulk_session>;
