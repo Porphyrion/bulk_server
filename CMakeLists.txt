@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.6)
 
 project(Bulk_server VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
 
-find_package(Boost) # COMPONENTS) # system REQUIRED)
+find_package(Boost COMPONENTS system REQUIRED)
 
 add_library(bulk commandblock.cpp observers.cpp interpreter.cpp bulkhandler.cpp)
 add_library(async SHARED async.cpp async.h)
