@@ -6,10 +6,11 @@ addons:
            - libstdc++-6-dev
 compiler: clang
 before_script:
-  - sudo apt-get install libboost-dev libboost-system-dev 
+  - sudo apt-get install libboost-dev  -y
   - echo "deb http://archive.ubuntu.com/ubuntu xenial main universe" | sudo tee -a /etc/apt/sources.list
   - sudo apt-get update -qq
   - sudo apt-get install libspdlog-dev -y
+  - sudo apt-get install libboost-system-dev -y
 script:
 - cmake .
 - cmake --build .
