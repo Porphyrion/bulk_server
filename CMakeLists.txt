@@ -8,12 +8,13 @@ add_library(bulk commandblock.cpp observers.cpp interpreter.cpp bulkhandler.cpp)
 add_library(async SHARED async.cpp async.h)
 set_property(TARGET bulk PROPERTY POSITION_INDEPENDENT_CODE ON)
 
-target_link_libraries(async bulk)
+# target_link_libraries(async bulk)
 
 add_executable(bulk_server main.cpp)
 
 target_link_libraries(bulk_server
         async
+        bulk
         ${Boost_LIBRARIES}
         )
 
