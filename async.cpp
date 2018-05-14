@@ -1,8 +1,3 @@
-#include <string>
-#include <sstream>
-#include <iostream>
-#include <memory>
-#include <algorithm>
 #include "async.h"
 
 namespace async {
