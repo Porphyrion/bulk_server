@@ -2,8 +2,6 @@
 #include <boost/asio.hpp>
 #include "async_server.h"
 
-
-
 int main(int argc, char const *argv[]) {
 
     if (argc < 3)
