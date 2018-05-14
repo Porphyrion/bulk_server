@@ -1,12 +1,12 @@
 #include "async.h"
 
 async::Interpreter::Interpreter(long N_):dynamic_counter(0){
-    cb = std::make_shared<bulk::CommandBlock>(N_);
-    cb->subscribe(std::make_unique<bulk::CoutObserver>(cb));
-    cb->subscribe(std::make_unique<bulk::LogObserver>(cb));
+    cb = std::make_shared<CommandBlock>(N_);
+    cb->subscribe(std::make_unique<CoutObserver>(cb));
+    cb->subscribe(std::make_unique<LogObserver>(cb));
 }
 
-void aync::Interpreter::readCommand(std::string &command){
+void async::Interpreter::readCommand(std::string &command){
 
     if(command == "{"){
         if(!dynamic_counter)
