@@ -1,13 +1,13 @@
-#include "bulk.h"
+#include "async.h"
 
-bulk::Interpreter::Interpreter(long N_):dynamic_counter(0){
+async::Interpreter::Interpreter(long N_):dynamic_counter(0){
     cb = std::make_shared<bulk::CommandBlock>(N_);
     cb->subscribe(std::make_unique<bulk::CoutObserver>(cb));
     cb->subscribe(std::make_unique<bulk::LogObserver>(cb));
 }
 
-void bulk::Interpreter::readCommand(std::string &command){
-    
+void aync::Interpreter::readCommand(std::string &command){
+
     if(command == "{"){
         if(!dynamic_counter)
             cb->setStatus(Status::start_dynamic);
@@ -23,6 +23,6 @@ void bulk::Interpreter::readCommand(std::string &command){
     }
 };
 
-void bulk::Interpreter::lastBulk(){
+void async::Interpreter::lastBulk(){
     cb->setStatus(Status::last_bulk);
 }

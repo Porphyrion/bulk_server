@@ -1,6 +1,6 @@
-#include "bulk.h"
+#include "async.h"
 
-void bulk::CoutObserver::update(Status s){
+void async::CoutObserver::update(Status s){
     if(s == Status::stop){
         std::cout<<"bulk: ";
         for(auto i : cb->commands){
@@ -10,7 +10,7 @@ void bulk::CoutObserver::update(Status s){
     }
 };
 
-void bulk::LogObserver::update(Status s){
+void async::LogObserver::update(Status s){
     if(s == Status::start){
         bulkBeginTime = boost::lexical_cast<std::string>(time(nullptr));
         bulkFileName = bulkBeginTime;

@@ -1,6 +1,6 @@
-#include "bulk.h"
+#include "async.h"
 
-void bulk::CommandBlock::notify(){
+void async::CommandBlock::notify(){
     for(auto& i : subs){
         i->update(status);
     }
@@ -10,11 +10,11 @@ void bulk::CommandBlock::notify(){
     }
 };
 
-void bulk::CommandBlock::subscribe(std::unique_ptr<Observer> obs){
+void async::CommandBlock::subscribe(std::unique_ptr<Observer> obs){
     subs.push_back(std::move(obs));
 };
 
-void bulk::CommandBlock::setStatus(Status s){
+void async::CommandBlock::setStatus(Status s){
     status = s;
     if(status == Status::start) commands.clear();
     else if(status == Status::start_dynamic){
@@ -29,7 +29,7 @@ void bulk::CommandBlock::setStatus(Status s){
     notify();
 }
 
-void bulk::CommandBlock::appendCommnad(std::string & command){
+void async::CommandBlock::appendCommnad(std::string & command){
     if(!dynamic){
         if(commands.size() == 0){
             setStatus(Status::start);
