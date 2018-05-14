@@ -91,8 +91,8 @@ private:
     std::string stash;
 };
 
-std::set<std::shared_ptr<Handle>> handlers{};
-int id = 0;
+static std::set<std::shared_ptr<Handle>> handlers{};
+static int id = 0;
 
 handle_t connect(std::size_t bulk);
 void receive(handle_t handle, const char *data, std::size_t size);
