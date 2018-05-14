@@ -1,7 +1,7 @@
 #include "async.h"
 
 
-handle_t async::connect(std::size_t bulk_){
+async::handle_t async::connect(std::size_t bulk_){
     auto h = std::make_shared<Handle>(bulk_);
     handlers.emplace(h);
     return static_cast<handle_t>(h.get());
