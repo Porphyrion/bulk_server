@@ -30,9 +30,9 @@ public:
         }
     }
 
-    class stupid_interpreter{
+    class server_interpreter{
     public:
-        stupid_interpreter(handle_t handle_):handle(handle_),dynamic_counter(0){};
+        server_interpreter(handle_t handle_):handle(handle_),dynamic_counter(0){};
         void readCommand(std::string &msg){
             if(msg == "{"){
                 if(!dynamic_counter) dynamic_bulk.push_back("{");
@@ -62,7 +62,7 @@ public:
     };
 
     void join(bulk_session_ptr participant){
-        participants_.emplace(participant, stupid_interpreter(handle));
+        participants_.emplace(participant, server_interpreter(handle));
     }
 
 private:
