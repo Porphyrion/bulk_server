@@ -67,7 +67,7 @@ public:
 
 private:
     std::queue<std::vector<std::string>> queue_bulk;
-    std::map<bulk_session_ptr, stupid_interpreter> participants_;
+    std::map<bulk_session_ptr, server_interpreter> participants_;
     std::queue<std::string> recent_msgs_;
     handle_t handle;
 };
