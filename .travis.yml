@@ -5,10 +5,11 @@ addons:
  apt:
    update: true
    sources: [ 'ubuntu-toolchain-r-test' ]
+            https://github.com/amyasnov/stepic-db-intro
    packages:
            - libstdc++-6-dev
            - libboost-dev
-           - libboost-system-dev
+           - libboost-system1.62-dev
 compiler: clang
 
 #before_script:
