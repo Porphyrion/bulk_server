@@ -11,15 +11,12 @@ add_executable(bulk_server main.cpp)
 
 target_link_libraries(bulk_server
         async
-        #bulk
         ${Boost_LIBRARIES}
         )
 
 set_target_properties(bulk_server async   PROPERTIES
         CXX_STANDARD 14
         CXX_STANDARD_REQUIRED ON
-        CMAKE_CXX_EXTENSIONS OFF
-        # COMPILE_DEFINITIONS BOOST_ASIO_ENABLE_HANDLER_TRACKING
         COMPILE_OPTIONS "-Wpedantic;-Wall;-Wextra;"
         )
 
