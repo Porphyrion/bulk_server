@@ -8,7 +8,7 @@ addons:
    packages:
            - libstdc++-6-dev
            - libboost-dev
-           - libboost-system1.62-dev
+           - libboost-system-dev
 compiler: clang
 
 script:
