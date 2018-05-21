@@ -59,11 +59,13 @@ public:
 
 class LogObserver : public Observer{
 public:
-    LogObserver(std::shared_ptr<CommandBlock> cb_) : Observer(cb_){};
+    LogObserver(std::shared_ptr<CommandBlock> cb_) : Observer(cb_),
+                        bulkCounter(0){};
     ~LogObserver() = default;
     void update(Status s) override;
 
 private:
+    int bulkCounter;
     std::string bulkBeginTime;
     std::string bulkFileName;
 };
