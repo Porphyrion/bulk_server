@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.6)
 
-project(Bulk_server) # VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
+project(Bulk_server VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
 
 find_package(Boost COMPONENTS system REQUIRED)
 include_directories(${Boost_INCLUDE_DIR})
@@ -18,6 +18,7 @@ set_target_properties(bulk_server async   PROPERTIES
         CXX_STANDARD 14
         CXX_STANDARD_REQUIRED ON
         COMPILE_OPTIONS "-Wpedantic;-Wall;-Wextra;"
+        # COMPILE_DEFINITIONS BOOST_ASIO_ENABLE_HANDLER_TRACKING
         )
 
 include(GNUInstallDirs)

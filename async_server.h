@@ -97,12 +97,11 @@ public:
              std::string line;
              istrm>>line;
              auto bicycle = std::all_of(line.begin(), line.end(), [](char c){return c == '\0';});
-
-             if (!ec && !bicycle)
+             if (!bicycle && !ec)
              {
                 room.deliver(line, shared_from_this());
-                do_read();
              }
+             do_read();
            });
      }
 
