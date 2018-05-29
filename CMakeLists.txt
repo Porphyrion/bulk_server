@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.6)
 
-project(Bulk_server VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
+project(Bulk_server) # VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
 
 find_package(Boost COMPONENTS system REQUIRED)
 include_directories(${Boost_INCLUDE_DIR})

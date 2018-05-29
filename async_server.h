@@ -103,11 +103,6 @@ public:
                 room.deliver(line, shared_from_this());
                 do_read();
              }
-             else{
-                 if(ec.value() == 2 || bicycle) {
-                     room.leave(shared_from_this());
-                 }
-             }
            });
      }
 
