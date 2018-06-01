@@ -19,7 +19,8 @@ public:
     bulk_room(int bulk_size_) : handle(connect(bulk_size_)){}
 
     void leave(bulk_session_ptr participant){
-        last_session_bulk(handle);
+        if(participants_.size() == 1)
+            last_session_bulk(handle);
         participants_.erase(participant);
     }
 
@@ -97,11 +98,20 @@ public:
              std::string line;
              istrm>>line;
              auto bicycle = std::all_of(line.begin(), line.end(), [](char c){return c == '\0';});
-             if (!bicycle && !ec)
+             if (!ec)
              {
-                room.deliver(line, shared_from_this());
+                if(!bicycle){
+                    room.deliver(line, shared_from_this());
+                }
+                do_read();
              }
-             do_read();
+             else{
+                 if(!bicycle){
+                     room.deliver(line, shared_from_this());
+                 }
+                 room.leave(shared_from_this());
+                 return;
+             }
            });
      }
 
