@@ -5,7 +5,7 @@ project(Bulk_server VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
 find_package(Boost COMPONENTS system REQUIRED)
 include_directories(${Boost_INCLUDE_DIR})
 
-add_library(async async.cpp commandblock.cpp observers.cpp interpreter.cpp bulkhandler.cpp)
+add_library(async async.cpp commandblock.cpp observers.cpp interpreter.cpp bulkhandle.cpp)
 
 add_executable(bulk_server main.cpp)
 
